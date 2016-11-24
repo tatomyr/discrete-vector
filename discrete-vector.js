@@ -1,4 +1,11 @@
-class Vector extends Array {
+/**
+ * Defining of Discrete Vector class
+ * Min value -- 0
+ * Max value is set by 'range' parameter
+ * Default range -- 1 (binary vector)
+ */
+
+class DiscreteVector extends Array {
   constructor(original) {
     super();
 
@@ -14,6 +21,12 @@ class Vector extends Array {
         break;
       }
     }
+
+    return this;
+  }
+
+  random(range = 1) {
+    for (let i in this) this[i] = Math.floor(Math.random() * (range + 1));
 
     return this;
   }

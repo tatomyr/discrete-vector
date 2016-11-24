@@ -24,7 +24,7 @@ const t = [
   [40, 100],
   [20, 30]
 ];
-const J = new Vector(t);
+const J = new DiscreteVector(t);
 const T = [];
 for (let n = 0; n < Math.pow(2, t.length); n++) {
   T.push(embodiment(t, J.next()));
