@@ -3,9 +3,9 @@
 // Find every possible combination of total duration
 // Assume that there are only two possible duration for each operation - min or max
 
-console.log();
-console.log('Example #1');
-console.log();
+console.log('');
+console.info('Example #1');
+console.log('');
 
 const embodiment = (a, b) => a.reduce((prev, item, i) => prev + item[b[i]], 0);
 const t = [
@@ -26,7 +26,7 @@ const t = [
 ];
 const J = new DiscreteVector(t);
 const T = [];
-for (let n = 0; n < Math.pow(2, t.length); n++) {
+for (let n = 0; n < J.combinations(); n++) {
   T.push(embodiment(t, J.next()));
 }
 console.log(T.sort((a, b) => a - b));
