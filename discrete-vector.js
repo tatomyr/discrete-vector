@@ -9,7 +9,8 @@ class DiscreteVector extends Array {
   constructor(original) {
     super();
 
-    for (let i in original) this[i] = 0;
+    // for (let i in original) this[i] = 0;
+    original.forEach((item, i) => this[i] = 0);
   }
 
   next(range = 1) {
@@ -26,13 +27,15 @@ class DiscreteVector extends Array {
   }
 
   random(range = 1) {
-    for (let i in this) this[i] = Math.floor(Math.random() * (range + 1));
+    // for (let i in this) this[i] = Math.floor(Math.random() * (range + 1));
+    this.forEach((item, i) => this[i] = Math.floor(Math.random() * (range + 1)));
 
     return this;
   }
 
   reset() {
-    for (let i in this) this[i] = 0;
+    // for (let i in this) this[i] = 0;
+    this.forEach((item, i) => this[i] = 0);
 
     return this;
   }
