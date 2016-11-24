@@ -27,19 +27,16 @@ class DiscreteVector extends Array {
         break;
       }
     }
-
     return this;
   }
 
   random(range = 1) {
     this.forEach((item, i) => this[i] = Math.floor(Math.random() * (range + 1)));
-
     return this;
   }
 
   reset() {
     this.forEach((item, i) => this[i] = 0);
-
     return this;
   }
 
