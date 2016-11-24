@@ -11,7 +11,7 @@ class DiscreteVector extends Array {
 
     if (Array.isArray(origin)) {
       origin.forEach((item, i) => this[i] = 0);
-    } else if (typeof origin === 'number'){
+    } else if (typeof origin === 'number') {
       for (let i = 0; i < origin; i++) this[i] = 0;
     } else {
       throw(new Error('Argument is neither array nor number!'));
