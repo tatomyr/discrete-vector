@@ -30,3 +30,8 @@ for (let n = 0; n < J.combinations(); n++) {
   T.push(embodiment(t, J.next()));
 }
 console.log(T.sort((a, b) => a - b));
+const P = 0.99;
+console.log(
+  `${P * 100}%: [${Math.ceil((T.length - 1) * P)}] =>`,
+  T.sort((a, b) => a - b)[Math.ceil((T.length - 1) * P)]
+);

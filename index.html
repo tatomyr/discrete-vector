@@ -4,9 +4,59 @@
   <title>Vector Example</title>
   <!-- Put the next line into your html head to enable the Vector library -->
   <script src="discrete-vector.js"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
 </head><body>
   <h1>Push F12 to open Console</h1>
+
+  <canvas id="myChart" width="400" height="200"></canvas>
   <script src="example-1.js"></script>
+  <script>
+    const datasets = [{
+      // fill: false,
+      // borderColor: 'black',
+      // backgroundColor: 'black',
+      label: 'Hours -- %Probability',
+      // xAxisID: 'Hours',
+      // yAxisID: '%Probability',
+      // pointBorderColor: 'rgba(100,255,0,1)',
+      pointBorderWidth: 0,
+      pointRadius: 0,
+      showLine: true,
+      // spanGaps: true,
+      lineTension: 0,
+      borderWidth: 2,
+      borderColor: 'blue',
+      data: T.sort(
+        (a, b) => a - b
+      ).map(
+        (item, i) => ({ x: item, y: 100 * i / (T.length - 1) })
+      )
+    }];
+
+    const ctx = document.getElementById("myChart");
+    const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        datasets
+      },
+      options: {
+        scales: {
+          xAxes: [{
+            type: 'linear',
+            // type: 'time',
+            position: 'bottom'
+          }],
+          // yAxes: [{
+          //   ticks: {
+          //     beginAtZero:true
+          //   }
+          // }]
+        }
+      }
+    });
+  </script>
+
   <script src="example-2.js"></script>
   <script src="example-3.js"></script>
   <script src="example-4.js"></script>
