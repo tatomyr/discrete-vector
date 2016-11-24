@@ -40,11 +40,19 @@ class DiscreteVector extends Array {
     return this;
   }
 
-  orderNumber(range = 1) {
+  index(range = 1) {
     return this.reduce((prev, item, i) => prev + item * Math.pow(range + 1, i), 0);
   }
 
   combinations(range = 1) {
     return Math.pow(range + 1, this.length);
+  }
+
+  fill(origin) {
+    const result = [];
+    for (let i = 0; i < this.length; i++) {
+      for (let j = 0; j < this[i]; j++) result.push(origin[i]);
+    }
+    return result;
   }
 }
