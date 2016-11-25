@@ -7,7 +7,7 @@ console.info('Example #5');
 console.log('');
 
 const C = new DiscreteVector(4);
-for (let n = 0; n < C.combinations(); n++) {
+for (let n = 0; n < C.combinations; n++) {
   console.log(`#${n}`, C, C.index());
   C.next();
 }

@@ -26,7 +26,7 @@ const t = [
 ];
 const J = new DiscreteVector(t);
 const T = [];
-for (let n = 0; n < J.combinations(); n++) {
+for (let n = 0; n < J.combinations; n++) {
   T.push(embodiment(t, J.next()));
 }
 console.log(T.sort((a, b) => a - b));
