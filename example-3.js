@@ -10,7 +10,7 @@ const q = ['a', 'b', 'c'];
 console.log(q);
 console.log('------------------');
 const v = new DiscreteVector(q);
-for (let n = 0; n < v.combinations(); n++) {
+for (let n = 0; n < v.combinations; n++) {
   // const Q = q.reduce((prev, item, i) => `${prev}${v[i] && item || ''}`, '');
   console.log(`#${n}`, v, v.fill(q));
   v.next();

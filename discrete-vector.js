@@ -6,7 +6,7 @@
  */
 
 class DiscreteVector extends Array {
-  constructor(origin) {
+  constructor(origin, range = 1) {
     super();
 
     if (Array.isArray(origin)) {
@@ -16,27 +16,36 @@ class DiscreteVector extends Array {
     } else {
       throw(new Error('Argument is neither array nor number!'));
     }
+
+    this.range = range;
+    this.combinations = Math.pow(range + 1, this.length);
   }
 
-  next(range = 1) {
-    this.some((item, i) => item < range ? ++this[i] : this[i] = 0);
-    return this;
-  }
-
-  nextImperative(range = 1) {
+  next() {
     for (let i = 0; i < this.length; i++) {
-      if (this[i] >= range) {
-        this[i] = 0;
-      } else {
+      if (this[i] < this.range) {
         this[i]++;
         break;
+      } else {
+        this[i] = 0;
       }
+      // if (this[i] >= this.range) {
+      //   this[i] = 0;
+      // } else {
+      //   this[i]++;
+      //   break;
+      // }
     }
     return this;
   }
 
-  random(range = 1) {
-    this.forEach((item, i) => this[i] = Math.floor(Math.random() * (range + 1)));
+  nextFunctional() {
+    this.some((item, i) => item < this.range ? ++this[i] : this[i] = 0);
+    return this;
+  }
+
+  random() {
+    this.forEach((item, i) => this[i] = Math.floor(Math.random() * (this.range + 1)));
     return this;
   }
 
@@ -45,15 +54,19 @@ class DiscreteVector extends Array {
     return this;
   }
 
-  index(range = 1) {
-    return this.reduce((prev, item, i) => prev + item * Math.pow(range + 1, i), 0);
-  }
-
-  combinations(range = 1) {
-    return Math.pow(range + 1, this.length);
+  index() {
+    return this.reduce((prev, item, i) => prev + item * Math.pow(this.range + 1, i), 0);
   }
 
   fill(origin) {
+    const result = [];
+    for (let i = 0; i < this.length; i++) {
+      for (let j = 0; j < this[i]; j++) result.push(origin[i]);
+    }
+    return result;
+  }
+
+  fillFunctional(origin) {
     const result = [];
     this.forEach((item, i) => {
       for (let j = 0; j < item; j++) result.push(origin[i]);

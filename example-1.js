@@ -26,10 +26,8 @@ const t = [
 ];
 const J = new DiscreteVector(t);
 const T = [];
-timerStart = Date.now(); // Timer
-for (let n = 0; n < J.combinations(); n++) {
+for (let n = 0; n < J.combinations; n++) {
   T.push(embodiment(t, J.next()));
-  if (n === J.combinations() - 1) console.log(Date.now() - timerStart); // Timer
 }
 console.log(T.sort((a, b) => a - b));
 const P = 0.95;
