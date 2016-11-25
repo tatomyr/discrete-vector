@@ -20,12 +20,18 @@ class DiscreteVector extends Array {
 
   next(range = 1) {
     for (let i = 0; i < this.length; i++) {
-      if (this[i] >= range) {
-        this[i] = 0;
-      } else {
+      if (this[i] < range) {
         this[i]++;
         break;
+      } else {
+        this[i] = 0;
       }
+      // if (this[i] >= range) {
+      //   this[i] = 0;
+      // } else {
+      //   this[i]++;
+      //   break;
+      // }
     }
     return this;
   }
