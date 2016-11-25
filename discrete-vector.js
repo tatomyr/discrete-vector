@@ -19,17 +19,11 @@ class DiscreteVector extends Array {
   }
 
   next(range = 1) {
-    /* */
-    this.some((item, i) => {
-      if (item < range) {
-        this[i]++;
-        return true;
-      } else {
-        this[i] = 0;
-        return false;
-      }
-    });
-    /* *
+    this.some((item, i) => item < range ? ++this[i] : this[i] = 0);
+    return this;
+  }
+
+  nextImperative(range = 1) {
     for (let i = 0; i < this.length; i++) {
       if (this[i] >= range) {
         this[i] = 0;
@@ -38,7 +32,6 @@ class DiscreteVector extends Array {
         break;
       }
     }
-    /* */
     return this;
   }
 
@@ -62,15 +55,9 @@ class DiscreteVector extends Array {
 
   fill(origin) {
     const result = [];
-    /* */
     this.forEach((item, i) => {
       for (let j = 0; j < item; j++) result.push(origin[i]);
     });
-    /* *
-    for (let i = 0; i < this.length; i++) {
-      for (let j = 0; j < this[i]; j++) result.push(origin[i]);
-    }
-    /* */
     return result;
   }
 }
