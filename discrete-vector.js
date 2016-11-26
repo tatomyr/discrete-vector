@@ -29,12 +29,6 @@ class DiscreteVector extends Array {
       } else {
         this[i] = 0;
       }
-      // if (this[i] >= this.range) {
-      //   this[i] = 0;
-      // } else {
-      //   this[i]++;
-      //   break;
-      // }
     }
     return this;
   }

@@ -5,24 +5,23 @@ console.log('');
 console.info('Example #6');
 console.log('');
 
-const alpha = [1,2,3,4,5,6,7,8,9,10];
-const ALPHA = new DiscreteVector(alpha, 3);
+const vector = new DiscreteVector(20, 1);
 
 TIMER = { imperative: [], functional: [], ratio: [] };
 for (let i = 0; i < 10; i++) {
   timerStart = Date.now(); // Timer
-  for (let n = 0; n < ALPHA.combinations; n++) {
-    ALPHA.next();
-    if (n === ALPHA.combinations - 1) {
+  for (let n = 0; n < vector.combinations; n++) {
+    vector.next();
+    if (n === vector.combinations - 1) {
       timerEnd = Date.now() - timerStart; // Timer
       TIMER.imperative.push(timerEnd);
     }
   }
 
   timerStart = Date.now(); // Timer
-  for (let n = 0; n < ALPHA.combinations; n++) {
-    ALPHA.nextFunctional();
-    if (n === ALPHA.combinations - 1) {
+  for (let n = 0; n < vector.combinations; n++) {
+    vector.nextFunctional();
+    if (n === vector.combinations - 1) {
       timerEnd = Date.now() - timerStart; // Timer
       TIMER.functional.push(timerEnd);
     }
@@ -30,4 +29,6 @@ for (let i = 0; i < 10; i++) {
 }
 TIMER.imperative.forEach((item, i) => TIMER.ratio.push(TIMER.functional[i] / TIMER.imperative[i]));
 console.table(TIMER);
-console.log('avg:', TIMER.ratio.reduce((prev, item, i) => prev + item, 0) / TIMER.ratio.length);
+console.log('avg i:', TIMER.imperative.reduce((prev, item, i) => prev + item, 0) / TIMER.imperative.length);
+console.log('avg f:', TIMER.functional.reduce((prev, item, i) => prev + item, 0) / TIMER.functional.length);
+console.log('avg r:', TIMER.ratio.reduce((prev, item, i) => prev + item, 0) / TIMER.ratio.length);
