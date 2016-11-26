@@ -17,8 +17,16 @@ class DiscreteVector extends Array {
       throw(new Error('Argument is neither array nor number!'));
     }
 
-    this.range = range;
-    this.combinations = Math.pow(range + 1, this.length);
+    // this.range = range;
+    // this.combinations = Math.pow(range + 1, this.length);
+    Object.defineProperty(this, 'range', {
+      value: range,
+      enumerable: false
+    });
+    Object.defineProperty(this, 'combinations', {
+      value: Math.pow(range + 1, this.length),
+      enumerable: false
+    });
   }
 
   next() {
