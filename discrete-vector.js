@@ -69,9 +69,6 @@ class DiscreteVector extends Array {
   }
 
   fillFunctional(origin) {
-    return this.reduce((prev, item, i) => {
-      prev.push(...Array(item).fill(origin[i]));
-      return prev;
-    }, []);
+    return this.reduce((prev, item, i) => [...prev, ...Array(item).fill(origin[i])], []);
   }
 }
