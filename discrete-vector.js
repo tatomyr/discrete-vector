@@ -17,8 +17,6 @@ class DiscreteVector extends Array {
       throw(new Error('Argument is neither array nor number!'));
     }
 
-
-
     Object.defineProperty(this, 'range', {
       value: range,
       enumerable: false
