@@ -12,6 +12,6 @@ console.log('------------------');
 const f = new DiscreteVector(h, 2);
 for (let n = 0; n < f.combinations; n++) {
   const H = h.reduce((prev, item, i)=> prev + item * f[i], 0);
-  console.log(`#${n}`, f, f.fill(h), H);
+  console.log(`#${n}`, f, f.fill(h), '~', f.fillFunctional(h), H);
   f.next();
 }

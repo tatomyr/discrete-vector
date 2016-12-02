@@ -12,13 +12,13 @@ class DiscreteVector extends Array {
     if (Array.isArray(origin)) {
       origin.forEach((item, i) => this[i] = 0);
     } else if (typeof origin === 'number') {
-      for (let i = 0; i < origin; i++) this[i] = 0;
+      this.push(...Array(origin).fill(0));
     } else {
       throw(new Error('Argument is neither array nor number!'));
     }
 
-    // this.range = range;
-    // this.combinations = Math.pow(range + 1, this.length);
+
+
     Object.defineProperty(this, 'range', {
       value: range,
       enumerable: false
@@ -69,10 +69,9 @@ class DiscreteVector extends Array {
   }
 
   fillFunctional(origin) {
-    const result = [];
-    this.forEach((item, i) => {
-      for (let j = 0; j < item; j++) result.push(origin[i]);
-    });
-    return result;
+    return this.reduce((prev, item, i) => {
+      prev.push(...Array(item).fill(origin[i]));
+      return prev;
+    }, []);
   }
 }
