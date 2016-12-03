@@ -20,7 +20,7 @@ for (let i = 0; i < 10; i++) {
 
   timerStart = Date.now(); // Timer
   for (let n = 0; n < vector.combinations; n++) {
-    vector.nextFunctional();
+    vector.next_();
     if (n === vector.combinations - 1) {
       timerEnd = Date.now() - timerStart; // Timer
       TIMER.functional.push(timerEnd);

@@ -27,6 +27,7 @@ class DiscreteVector extends Array {
     });
   }
 
+  // Imperative implementation:
   next() {
     for (let i = 0; i < this.length; i++) {
       if (this[i] < this.range) {
@@ -39,7 +40,8 @@ class DiscreteVector extends Array {
     return this;
   }
 
-  nextFunctional() {
+  // Functional implementation:
+  next_() {
     this.some((item, i) => item < this.range ? ++this[i] : this[i] = 0);
     return this;
   }
@@ -58,7 +60,8 @@ class DiscreteVector extends Array {
     return this.reduce((prev, item, i) => prev + item * Math.pow(this.range + 1, i), 0);
   }
 
-  fill(origin) {
+  // Imperative implementation:
+  fillWith(origin) {
     const result = [];
     for (let i = 0; i < this.length; i++) {
       for (let j = 0; j < this[i]; j++) result.push(origin[i]);
@@ -66,7 +69,8 @@ class DiscreteVector extends Array {
     return result;
   }
 
-  fillFunctional(origin) {
+  // Functional implementation:
+  fillWith_(origin) {
     return this.reduce((prev, item, i) => [...prev, ...Array(item).fill(origin[i])], []);
   }
 }
