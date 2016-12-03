@@ -22,25 +22,25 @@ vector.next()
 each time you want to find next combination.
 For the first time, you receive `[1, 0, 0]`. It tells that the current set consists only from `'a'`.
 
-A number of possible combinations can be found with
+A number of possible combinations can be found with:
 ``` javascript
 vector.combinations
 ```
-To fill the vector with random values (within defined range) write down
+To fill the vector with random values (within defined range) write down:
 ``` javascript
 vector.random()
 ```
-To fill a new array with the proper amount of origin's array items write down
+To fill a new array with the proper amount of origin's array items write down:
 ``` javascript
 vector.fillWith(origin)
 ```
-To reset vector write down
+To reset vector write down:
 ``` javascript
 vector.reset()
 ```
 
 You also can specify arity of the vector (default binary, max value is equal to 1).
-To do this put the second parameter RANGE when you call
+To do this put the second parameter RANGE when you call:
 ``` javascript
 new DiscreteVector(origin, RANGE)
 ```
