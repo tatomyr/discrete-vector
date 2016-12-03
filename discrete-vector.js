@@ -27,6 +27,7 @@ class DiscreteVector extends Array {
     });
   }
 
+  // Find next combination for discrete vector
   // Imperative implementation:
   next() {
     for (let i = 0; i < this.length; i++) {
@@ -46,20 +47,24 @@ class DiscreteVector extends Array {
     return this;
   }
 
+  // Fills the vector with random values
   random() {
     this.forEach((item, i) => this[i] = Math.floor(Math.random() * (this.range + 1)));
     return this;
   }
 
+  // Reset the discrete vector
   reset() {
     this.forEach((item, i) => this[i] = 0);
     return this;
   }
 
+  // Coerces (range + 1)-ary number given in discrete vector to the decimal value
   index() {
     return this.reduce((prev, item, i) => prev + item * Math.pow(this.range + 1, i), 0);
   }
 
+  // Fills new array with proper amount of origin's array items
   // Imperative implementation:
   fillWith(origin) {
     const result = [];
