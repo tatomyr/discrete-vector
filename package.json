@@ -2,7 +2,7 @@
   "name": "discrete-vector",
   "version": "1.0.0",
   "description": "Implementing of discrete vectors",
-  "main": "discrete-vector.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

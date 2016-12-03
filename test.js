@@ -1,4 +1,4 @@
-const DiscreteVector = require('./discrete-vector.js');
+const DiscreteVector = require('./index.js');
 console.log(DiscreteVector);
 
 const a = ['a', 'b', 'c'];
