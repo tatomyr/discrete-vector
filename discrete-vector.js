@@ -27,7 +27,7 @@ class DiscreteVector extends Array {
     });
   }
 
-  // Find next combination for discrete vector
+  // Finds next combination for discrete vector
   // Imperative implementation:
   next() {
     for (let i = 0; i < this.length; i++) {
