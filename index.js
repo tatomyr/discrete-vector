@@ -5,7 +5,7 @@
  * Default range -- 1 (binary vector)
  */
 
-module.exports = class DiscreteVector extends Array {
+class DiscreteVector extends Array {
   constructor(origin, range = 1) {
     super();
 
@@ -79,3 +79,5 @@ module.exports = class DiscreteVector extends Array {
     return this.reduce((prev, item, i) => [...prev, ...Array(item).fill(origin[i])], []);
   }
 }
+
+module.exports = DiscreteVector;
