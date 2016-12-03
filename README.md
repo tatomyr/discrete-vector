@@ -14,11 +14,14 @@ So you can attach the library and create binary vector:
 vector = new DiscreteVector(origin)
 ```
 It initializes array filled with zeros.
+This corresponds to the case when none of the chars are included in the set. 
 You have to perform
 ``` javascript
 vector.next()
-```
+``` 
 each time you want to find next combination.
+For the first time, you receive `[1, 0, 0]`. It tells that the current set consists only from `'a'`.
+
 A number of possible combinations can be found with
 ``` javascript
 vector.combinations
