@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "Implementing of discrete vectors",
   "main": "index.js",
+  "engines": {
+    "node": ">=6.9.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -21,5 +24,9 @@
   "bugs": {
     "url": "https://github.com/tatomyr/discrete-vector/issues"
   },
-  "homepage": "https://github.com/tatomyr/discrete-vector#readme"
+  "homepage": "https://github.com/tatomyr/discrete-vector#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
 }
