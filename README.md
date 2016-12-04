@@ -14,11 +14,11 @@ So you can attach the library and create binary vector:
 vector = new DiscreteVector(origin)
 ```
 It initializes array filled with zeros.
-This corresponds to the case when none of the chars are included in the set. 
+This corresponds to the case when none of the chars are included in the set.
 You have to perform
 ``` javascript
 vector.next()
-``` 
+```
 each time you want to find next combination.
 For the first time, you receive `[1, 0, 0]`. It tells that the current set consists only from `'a'`.
 
@@ -40,7 +40,7 @@ vector.reset()
 ```
 
 You also can specify arity of the vector (default binary, max value is equal to 1).
-To do this put the second parameter RANGE when you call:
+To do this you should specify explicitly the second parameter RANGE:
 ``` javascript
 new DiscreteVector(origin, RANGE)
 ```
@@ -50,7 +50,10 @@ weights = [1, 3, 9]
 ```
 Imagine, you have two identically sets.
 What kind of total weight can you assemble with them?
-Well, define the trenary vector: `vector = new DiscreteVector(weights, 2)`.
+Well, define the trenary vector:
+``` javascript
+vector = new DiscreteVector(weights, 2)
+```
 To find all the possible total weights you can use this snippet:
 ``` javascript
 totals = Array(vector.combinations).fill().
