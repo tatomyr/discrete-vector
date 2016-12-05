@@ -3,27 +3,6 @@
 The light-weight JavaScript library that defines a DiscreteVector class
 which is useful when you try to look through combinations of some array of data.
 
-# Installation
-
-To use the library on pure front-end, load `discrete-vector.js`,
-move it to project folder and include the
-``` html
-<script src="discrete-vector.js"></script>
-```
-into html head.
-To use DiscreteVector on a server install it via npm:
-```
-$ npm install discrete-vector --save
-```
-and then import it in needed file:
-``` javascript
-DiscreteVector = require('discrete-vector')
-```
-or in ES6 way:
-``` javascript
-import DiscreteVector from 'discrete-vector'
-```
-
 # Examples
 
 For example, you have the array:
@@ -84,6 +63,27 @@ totals = Array(vector.combinations).fill().
   sort((a, b) => a - b);
 ```
 The result will be `[0, 1, 2, 4, 5, 6, 8, 9, 10]`.
+
+# Installation
+
+To use the library on pure front-end, load `discrete-vector.js`,
+move it to project folder and include the
+``` html
+<script src="discrete-vector.js"></script>
+```
+into html head.
+To use DiscreteVector on a server install it via npm:
+```
+$ npm install discrete-vector --save
+```
+and then import it in needed file:
+``` javascript
+DiscreteVector = require('discrete-vector')
+```
+or in ES6 way:
+``` javascript
+import DiscreteVector from 'discrete-vector'
+```
 
 # Tests
 
