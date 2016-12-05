@@ -1,0 +1,32 @@
+{
+  "name": "discrete-vector",
+  "version": "0.0.2",
+  "description": "Implementing of discrete vectors",
+  "main": "index.js",
+  "engines": {
+    "node": ">=6.9.1"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatomyr/discrete-vector.git"
+  },
+  "keywords": [
+    "discrete",
+    "binary",
+    "vector",
+    "combinations"
+  ],
+  "author": "tatomyr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tatomyr/discrete-vector/issues"
+  },
+  "homepage": "https://github.com/tatomyr/discrete-vector#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
