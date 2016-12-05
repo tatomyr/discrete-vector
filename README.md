@@ -85,6 +85,10 @@ totals = Array(vector.combinations).fill().
 ```
 The result will be `[0, 1, 2, 4, 5, 6, 8, 9, 10]`.
 
+# Tests
+
+To run tests, move into the npm folder (`$ cd npm`) and run `npm test`.
+
 # Warnings
 
 Be aware! This library uses ES6 features so you should use node version >= 6.x.x or babelify content manually.
