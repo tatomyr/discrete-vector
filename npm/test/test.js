@@ -56,13 +56,13 @@ describe('#DiscreteVector', () => {
     expect(result).to.equal('000');
   });
 
-  it('should compare random vector filled with origin imperatively and functionally', () => {
-    const random = (new DiscreteVector(origin, 4)).random();
+  it('should compare random array filled with origin imperatively and functionally', () => {
+    const random = (new DiscreteVector(origin, 4)).randomize();
     const result = random.fillWith(origin).join() === random.fillWith_(origin).join();
     expect(result).to.equal(true);
   });
-  it('should compare random vector next operations done imperatively and functionally', () => {
-    const random = (new DiscreteVector(origin, 4)).random();
+  it('should compare random array next operations done imperatively and functionally', () => {
+    const random = (new DiscreteVector(origin, 4)).randomize();
     const result = random.next().index() - random.next_().index();
     expect(result).to.equal(-1);
   });
