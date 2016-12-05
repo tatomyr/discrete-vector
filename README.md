@@ -69,7 +69,7 @@ new DiscreteVector(origin, RANGE)
 ```
 For example consider the set of weights:
 ``` javascript
-weights = [1, 3, 9]
+weights = [1, 4]
 ```
 Imagine, you have two identically sets.
 What kind of total weight can you assemble with them?
@@ -83,7 +83,7 @@ totals = Array(vector.combinations).fill().
   map(() => vector.next().fillWith(weights).reduce((sum, item) => sum + item, 0)).
   sort((a, b) => a - b);
 ```
-The result will be `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]`.
+The result will be `[0, 1, 2, 4, 5, 6, 8, 9, 10]`.
 
 # Warnings
 
