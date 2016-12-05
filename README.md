@@ -87,7 +87,7 @@ import DiscreteVector from 'discrete-vector'
 
 # Tests
 
-To run tests, move into the npm folder (`$ cd npm`) and run `npm test`.
+To run tests, move into the npm folder (`$ cd npm`) and run `$ npm test`.
 
 # Warnings
 
