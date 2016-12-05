@@ -48,6 +48,11 @@ class DiscreteVector extends Array {
   }
 
   // Fills the vector with random values
+  randomize() {
+    this.forEach((item, i) => this[i] = Math.floor(Math.random() * (this.range + 1)));
+    return this;
+  }
+  // Deprecated (duplicates this.randomize())
   random() {
     this.forEach((item, i) => this[i] = Math.floor(Math.random() * (this.range + 1)));
     return this;
