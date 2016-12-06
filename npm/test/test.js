@@ -55,6 +55,26 @@ describe('#DiscreteVector', () => {
     const result = vector.reset().join('');
     expect(result).to.equal('000');
   });
+  it('should return next combination with exact number of items equal to 2 with imperative method', () => {
+    const result = vector.next(2).join('');
+    console.log('#', vector.index(), vector, vector.fillWith(origin), '~', vector.fillWith_(origin));
+    expect(result).to.equal('110');
+  });
+  it('should return next combination with exact number of items equal to 2 with functional method', () => {
+    const result = vector.next_(2).join('');
+    console.log('#', vector.index(), vector, vector.fillWith(origin), '~', vector.fillWith_(origin));
+    expect(result).to.equal('101');
+  });
+  it('should return all possible combinations of origin', () => {
+    const result = JSON.stringify(vector.reset().allCombinations(origin));
+    console.log(result);
+    expect(result).to.equal('[["a"],["b"],["a","b"],["c"],["a","c"],["b","c"],["a","b","c"],[]]');
+  });
+  // it('should return all possible combinations of origin with exact number of items equal to 2', () => {
+  //   const result = vector.reset().allCombinations(origin, 2).join('|');
+  //   console.log(result);
+  //   expect(result).to.equal('a,b|a,c|b,c');
+  // });
 
   it('should compare random array filled with origin imperatively and functionally', () => {
     const random = (new DiscreteVector(origin, 4)).randomize();

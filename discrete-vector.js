@@ -38,14 +38,14 @@ class DiscreteVector extends Array {
         this[i] = 0;
       }
     }
-    if (exactNumber && this.reduce((prev, item) => prev + item, 0) !== exactNumber) this.next(exactNumber);
+    if (exactNumber && this.sumOfItems() !== exactNumber) this.next(exactNumber);
     return this;
   }
 
   // Functional implementation:
   next_(exactNumber) {
     this.some((item, i) => item < this.range ? ++this[i] : this[i] = 0);
-    if (exactNumber && this.reduce((prev, item) => prev + item, 0) !== exactNumber) this.next_(exactNumber);
+    if (exactNumber && this.sumOfItems() !== exactNumber) this.next_(exactNumber);
     return this;
   }
 
@@ -84,5 +84,27 @@ class DiscreteVector extends Array {
   // Functional implementation:
   fillWith_(origin) {
     return this.reduce((prev, item, i) => [...prev, ...Array(item).fill(origin[i])], []);
+  }
+
+  sumOfItems() {
+    return this.reduce((sum, item) => sum + item, 0);
+  }
+
+  // _factorial(n) {
+  //   return n > 1 ? n * this._factorial(n - 1) : 1;
+  // }
+
+  // allCombinations(origin, exactNumber) {
+  //   // if (n !== Math.floor(n)) throw(new Error('Expexted integer but found something else'));
+  //   return Array(
+  //       this._factorial(this.length) /
+  //       this._factorial(exactNumber) /
+  //       this._factorial(this.length - exactNumber)
+  //     ).fill().map(() => this.next(exactNumber).fillWith(origin));
+  // }
+
+  allCombinations(origin) {
+    return Array(this.combinations).fill().
+      map(() => this.next().fillWith(origin));
   }
 }

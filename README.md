@@ -22,7 +22,12 @@ You have to perform
 vector.next()
 ```
 each time you want to find next combination.
-For the first time, you receive `[1, 0, 0]`. It tells that the current set consists only from `'a'`.
+For the first time, you receive `[1, 0, 0]`.
+It tells that the current set consists only from `'a'`.
+To fill a new array with the proper amount of origin's array items write down:
+``` javascript
+vector.fillWith(origin) // ["a"]
+```
 
 A number of possible combinations can be found with:
 ``` javascript
@@ -31,10 +36,6 @@ vector.combinations
 To fill the vector with random values (within defined range) write down:
 ``` javascript
 vector.randomize()
-```
-To fill a new array with the proper amount of origin's array items write down:
-``` javascript
-vector.fillWith(origin)
 ```
 To reset vector write down:
 ``` javascript
