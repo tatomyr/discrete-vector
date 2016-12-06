@@ -64,6 +64,8 @@ totals = Array(vector.combinations).fill().
 ```
 The result will be `[0, 1, 2, 4, 5, 6, 8, 9, 10]`.
 
+If you want to combine with an exact number of indexes, you need to specify it explicitly: `vector.next(exactNumber)`.
+
 # Installation
 
 To use the library on pure front-end, load `discrete-vector.js`,

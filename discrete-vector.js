@@ -29,7 +29,7 @@ class DiscreteVector extends Array {
 
   // Finds next combination for discrete vector
   // Imperative implementation:
-  next() {
+  next(exactNumber) {
     for (let i = 0; i < this.length; i++) {
       if (this[i] < this.range) {
         this[i]++;
@@ -38,12 +38,14 @@ class DiscreteVector extends Array {
         this[i] = 0;
       }
     }
+    if (exactNumber && this.reduce((prev, item) => prev + item, 0) !== exactNumber) this.next(exactNumber);
     return this;
   }
 
   // Functional implementation:
-  next_() {
+  next_(exactNumber) {
     this.some((item, i) => item < this.range ? ++this[i] : this[i] = 0);
+    if (exactNumber && this.reduce((prev, item) => prev + item, 0) !== exactNumber) this.next_(exactNumber);
     return this;
   }
 
