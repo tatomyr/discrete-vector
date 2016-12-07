@@ -1,4 +1,4 @@
-# Discrete Vector [![npm version](https://badge.fury.io/js/discrete-vector.svg)](https://badge.fury.io/js/discrete-vector)
+# Discrete Vector [![npm version](https://badge.fury.io/js/discrete-vector.svg)](https://badge.fury.io/js/discrete-vector) 
 
 The light-weight JavaScript library that defines a DiscreteVector class
 which is useful when you try to look through combinations of some array of data.
