@@ -19,7 +19,7 @@ It initializes array filled with zeros.
 This corresponds to the case when none of the chars are included in the set.
 You have to perform
 ``` javascript
-vector.next()
+vector.next() // [1,0,0]
 ```
 each time you want to find next combination.
 For the first time, you receive `[1, 0, 0]`.
@@ -42,7 +42,7 @@ To reset vector write down:
 vector.reset()
 ```
 
-You also can specify arity of the vector (default binary, max value is equal to 1).
+You can also specify an arity of the vector (default binary, max value is equal to 1).
 To do this you should specify explicitly the second parameter RANGE:
 ``` javascript
 new DiscreteVector(origin, RANGE)
@@ -66,6 +66,20 @@ totals = Array(vector.combinations).fill().
 The result will be `[0, 1, 2, 4, 5, 6, 8, 9, 10]`.
 
 If you want to combine the vector with an exact number of indexes, you need to specify it explicitly: `vector.next(exactNumber)`.
+
+To get all possible combinations in one array you have to run:
+``` javascript
+vector.allCombinations(origin) // [["a"],["b"],["a","b"],["c"],["a","c"],["b","c"],["a","b","c"],[]]
+```
+You can also specify an exact number of items you need in result set by unnecessary second parameter `exactNumber`.
+
+Be carefull, this operation may take a lot of time for long arrays.
+
+You can get the sum of a vector items by running this method:
+``` javascript
+vector.sumOfItems();
+```
+
 
 # Installation
 

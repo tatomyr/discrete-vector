@@ -70,11 +70,18 @@ describe('#DiscreteVector', () => {
     console.log(result);
     expect(result).to.equal('[["a"],["b"],["a","b"],["c"],["a","c"],["b","c"],["a","b","c"],[]]');
   });
-  // it('should return all possible combinations of origin with exact number of items equal to 2', () => {
-  //   const result = vector.reset().allCombinations(origin, 2).join('|');
-  //   console.log(result);
-  //   expect(result).to.equal('a,b|a,c|b,c');
-  // });
+  it('should return all possible combinations of origin with exact number of items equal to 2', () => {
+    const result = JSON.stringify(vector.reset().allCombinations(origin, 2));
+    console.log(result);
+    expect(result).to.equal('[["a","b"],["a","c"],["b","c"]]');
+  });
+
+  it('should return all possible combinations of TWO PAIR OF origin with exact number of items equal to 3', () => {
+    const result = JSON.stringify((new DiscreteVector(origin, 2)).allCombinations(origin, 3));
+    console.log(result);
+    expect(result).to.equal('[["a","a","b"],["a","b","b"],["a","a","c"],["a","b","c"],["b","b","c"],["a","c","c"],["b","c","c"]]');
+    // expect(result).to.equal('[["a","a"],["a","b"],["b","b"],["a","c"],["b","c"],["c","c"]]');
+  });
 
   it('should compare random array filled with origin imperatively and functionally', () => {
     const random = (new DiscreteVector(origin, 4)).randomize();

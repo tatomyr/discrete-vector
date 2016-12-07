@@ -86,27 +86,27 @@ class DiscreteVector extends Array {
     return this.reduce((prev, item, i) => [...prev, ...Array(item).fill(origin[i])], []);
   }
 
+  // Returns sum of items in current combination
   sumOfItems() {
     return this.reduce((sum, item) => sum + item, 0);
   }
 
-  // _factorial(n) {
-  //   return n > 1 ? n * this._factorial(n - 1) : 1;
-  // }
-
-  // allCombinations(origin, exactNumber) {
-  //   // if (n !== Math.floor(n)) throw(new Error('Expexted integer but found something else'));
-  //   return Array(
-  //       this._factorial(this.length) /
-  //       this._factorial(exactNumber) /
-  //       this._factorial(this.length - exactNumber)
-  //     ).fill().map(() => this.next(exactNumber).fillWith(origin));
-  // }
-
-  allCombinations(origin) {
-    return Array(this.combinations).fill().
-      map(() => this.next().fillWith(origin));
+  // Returns all posible combinations in new array
+  allCombinations(origin, exactNumber) {
+    const startIndex = this.next(exactNumber).index()
+    console.log(startIndex);
+    const variants = [this.fillWith(origin)];
+    for (this.next(exactNumber); this.index() !== startIndex; this.next(exactNumber)) {
+      variants.push(this.fillWith(origin));
+      console.log(this.index(), '?=', startIndex, this.fillWith(origin));
+    }
+    return variants;
   }
+
+  // allCombinations(origin) {
+  //   return Array(this.combinations).fill().
+  //     map(() => this.next().fillWith(origin));
+  // }
 }
 
 module.exports = DiscreteVector;
