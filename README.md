@@ -45,7 +45,7 @@ You can also specify an exact number of items you need in result set by unnecess
 
 You can get the sum of a vector items by running this method:
 ``` javascript
-vector.sumOfItems();
+vector.sumOfItems()
 ```
 
 A number of possible combinations can be found with:
