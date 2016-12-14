@@ -1,4 +1,4 @@
-# Discrete Vector [![npm version](https://badge.fury.io/js/discrete-vector.svg)](https://badge.fury.io/js/discrete-vector) 
+# Discrete Vector [![npm version](https://badge.fury.io/js/discrete-vector.svg)](https://badge.fury.io/js/discrete-vector)
 
 The light-weight JavaScript library that defines a DiscreteVector class
 which is useful when you try to look through combinations of some array of data.
@@ -52,7 +52,7 @@ For example consider the set of weights:
 weights = [1, 4]
 ```
 Imagine, you have two identically sets.
-What kind of total weight can you assemble with them?
+What kind of total weight you can assemble with them?
 Well, define the trenary vector:
 ``` javascript
 vector = new DiscreteVector(weights, 2)

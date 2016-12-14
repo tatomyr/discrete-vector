@@ -107,4 +107,19 @@ class DiscreteVector extends Array {
   //   return Array(this.combinations).fill().
   //     map(() => this.next().fillWith(origin));
   // }
+
+  // comb = function* (arr) {
+  //   const v = Array(arr.length).fill(0);
+  //   while(true) {
+  //     for (let i = 0; i < v.length; i++) {
+  //       if (v[i] < 1) {
+  //         v[i]++;
+  //         break;
+  //       } else {
+  //         v[i] = 0;
+  //       }
+  //     }
+  //     yield v;
+  //   }
+  // }
 }
