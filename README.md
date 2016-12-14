@@ -1,6 +1,6 @@
 # Discrete Vector [![npm version](https://badge.fury.io/js/discrete-vector.svg)](https://badge.fury.io/js/discrete-vector)
 
-The light-weight JavaScript library that defines a DiscreteVector class
+A JavaScript library that defines a DiscreteVector class
 which is useful when you try to look through combinations of some array of data.
 
 # Examples
@@ -29,14 +29,35 @@ To fill a new array with the proper amount of origin's array items write down:
 vector.fillWith(origin) // ["a"]
 ```
 
+If you want to combine the vector with an exact number of indexes, you need to specify it explicitly: `vector.next(exactNumber)`.
+For example:
+``` javascript
+vector.next(2).fillWith(origin) // ["a","b"], then ["a","c"], then ["b","c"]
+```
+
+To get all the possible combinations in one array you have to run:
+``` javascript
+vector.allCombinations(origin) // [["a"],["b"],["a","b"],["c"],["a","c"],["b","c"],["a","b","c"],[]]
+```
+Be carefull, this operation may take a lot of time for long arrays.
+
+You can also specify an exact number of items you need in result set by unnecessary second parameter `exactNumber`.
+
+You can get the sum of a vector items by running this method:
+``` javascript
+vector.sumOfItems()
+```
+
 A number of possible combinations can be found with:
 ``` javascript
 vector.combinations
 ```
+
 To fill the vector with random values (within defined range) write down:
 ``` javascript
 vector.randomize()
 ```
+
 To reset vector write down:
 ``` javascript
 vector.reset()
@@ -65,22 +86,6 @@ totals = Array(vector.combinations).fill().
 ```
 The result will be `[0, 1, 2, 4, 5, 6, 8, 9, 10]`.
 
-If you want to combine the vector with an exact number of indexes, you need to specify it explicitly: `vector.next(exactNumber)`.
-
-To get all possible combinations in one array you have to run:
-``` javascript
-vector.allCombinations(origin) // [["a"],["b"],["a","b"],["c"],["a","c"],["b","c"],["a","b","c"],[]]
-```
-You can also specify an exact number of items you need in result set by unnecessary second parameter `exactNumber`.
-
-Be carefull, this operation may take a lot of time for long arrays.
-
-You can get the sum of a vector items by running this method:
-``` javascript
-vector.sumOfItems();
-```
-
-
 # Installation
 
 To use the library on pure front-end, load `discrete-vector.js`,
@@ -104,7 +109,7 @@ import DiscreteVector from 'discrete-vector'
 
 # Tests
 
-To run tests, move into the npm folder (`$ cd npm`) and run `$ npm test`.
+To run tests, move into the npm folder and run `$ npm test`.
 
 # Warnings
 

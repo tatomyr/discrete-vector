@@ -50,8 +50,10 @@ class DiscreteVector extends Array {
   }
 
   // Fills the vector with random values
-  randomize() {
+  // Can invoke an 'Range error: Maximum call stack size exceeded' for rare combinations
+  randomize(exactNumber) {
     this.forEach((item, i) => this[i] = Math.floor(Math.random() * (this.range + 1)));
+    if (exactNumber && this.sumOfItems() !== exactNumber) this.randomize(exactNumber);
     return this;
   }
   // Deprecated (duplicates this.randomize())
