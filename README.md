@@ -23,8 +23,8 @@ vector.next() // [1,0,0]
 ```
 each time you want to find next combination.
 For the first time, you receive `[1, 0, 0]`.
-It tells that the current set consists only from `'a'`.
-To fill a new array with the proper amount of origin's array items write down:
+It tells that the current set consists of only `'a'`.
+To fill a new array with the proper amount of origin array items write down:
 ``` javascript
 vector.fillWith(origin) // ["a"]
 ```
@@ -35,15 +35,15 @@ For example:
 vector.next(2).fillWith(origin) // ["a","b"], then ["a","c"], then ["b","c"]
 ```
 
-To get all the possible combinations in one array you have to run:
+To get all possible combinations in one array you have to run:
 ``` javascript
 vector.allCombinations(origin) // [["a"],["b"],["a","b"],["c"],["a","c"],["b","c"],["a","b","c"],[]]
 ```
-Be carefull, this operation may take a lot of time for long arrays.
+Be careful, this operation may take a lot of time for long arrays.
 
-You can also specify an exact number of items you need in result set by unnecessary second parameter `exactNumber`.
+You can also specify an exact number of items you need by unnecessary second parameter `exactNumber`.
 
-You can get the sum of a vector items by running this method:
+You can get the sum of vector items by running this method:
 ``` javascript
 vector.sumOfItems()
 ```
@@ -53,12 +53,12 @@ A number of possible combinations can be found with:
 vector.combinations
 ```
 
-To fill the vector with random values (within defined range) write down:
+To fill the vector with random values (within defined range), write down:
 ``` javascript
 vector.randomize()
 ```
 
-To reset vector write down:
+To reset the vector, write down:
 ``` javascript
 vector.reset()
 ```
@@ -68,17 +68,17 @@ To do this you should specify explicitly the second parameter RANGE:
 ``` javascript
 new DiscreteVector(origin, RANGE)
 ```
-For example consider the set of weights:
+For example, consider the set of weights:
 ``` javascript
 weights = [1, 4]
 ```
-Imagine, you have two identically sets.
+Imagine, you have two identical sets.
 What kind of total weight you can assemble with them?
 Well, define the trenary vector:
 ``` javascript
 vector = new DiscreteVector(weights, 2)
 ```
-To find all the possible total weights you can use this snippet:
+To find all possible total weights, you can use this snippet:
 ``` javascript
 totals = Array(vector.combinations).fill().
   map(() => vector.next().fillWith(weights).reduce((sum, item) => sum + item, 0)).
@@ -89,16 +89,16 @@ The result will be `[0, 1, 2, 4, 5, 6, 8, 9, 10]`.
 # Installation
 
 To use the library on pure front-end, load `discrete-vector.js`,
-move it to project folder and include the
+move it to the project folder and include
 ``` html
 <script src="discrete-vector.js"></script>
 ```
-into html head.
+in the html head.
 To use DiscreteVector on a server install it via npm:
 ```
 $ npm install discrete-vector --save
 ```
-and then import it in needed file:
+and then import it into needed file:
 ``` javascript
 DiscreteVector = require('discrete-vector')
 ```
@@ -113,4 +113,4 @@ To run tests, move into the npm folder and run `$ npm test`.
 
 # Warnings
 
-Be aware! This library uses ES6 features so you should use node version >= 6.x.x or babelify content manually.
+Be aware! This library uses ES6 features, so you should use node version >= 6.x.x or babelify content manually.
