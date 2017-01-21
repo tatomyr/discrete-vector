@@ -1,6 +1,6 @@
 {
   "name": "discrete-vector",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Implementing of discrete vectors",
   "main": "index.js",
   "engines": {
